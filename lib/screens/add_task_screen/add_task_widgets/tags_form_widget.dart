@@ -9,10 +9,11 @@ class TagsFormWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final prov = context.read<FormProvider>().taskData.tags;
     return Padding(
       padding: const EdgeInsets.only(top: 12.0),
       child: TextFormField(
-        initialValue: '',
+        initialValue: prov == 'sin etiqueta' ? null : prov,
         decoration: const InputDecoration(
           labelText: 'Etiqueta (Opcional)',
           hintText: 'Ejemplo: Hogar',

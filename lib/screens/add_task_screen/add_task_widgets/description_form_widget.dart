@@ -8,10 +8,11 @@ class DescriptionFormWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final prov = context.read<FormProvider>().taskData.description;
     return Padding(
       padding: const EdgeInsets.only(top: 12.0),
       child: TextFormField(
-        initialValue: context.read<FormProvider>().taskData.description,
+        initialValue: prov == 'sin descripción' ? null : prov,
         maxLength: 80,
         maxLines: null,
         decoration: const InputDecoration(
