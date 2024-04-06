@@ -10,3 +10,5 @@ class AppUrls {
   String get getTasks => '$baseURL/tasks';
 
 }
+
+// Globalizamos los Endpoints de la API, en caso de tener mas incluirlos aqui. 

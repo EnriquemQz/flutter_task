@@ -9,8 +9,6 @@ class TitleFormWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // var mymodel = TaskDetailModel();
-
     return TextFormField(
       initialValue: context.read<FormProvider>().taskData.title,
       maxLength: 25,

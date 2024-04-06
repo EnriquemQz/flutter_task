@@ -10,3 +10,5 @@ class AppColors {
   static const Color alertColor = Color.fromARGB(255, 243, 167, 27);
   static const Color textTitleColor = Color.fromARGB(255, 27, 59, 243);
 }
+
+// Globalizamos los colores de la aplicación

@@ -35,6 +35,8 @@ class TaskDetailsScreen extends StatelessWidget {
               ),
             ),
           ),
+
+          // Reutilizamos el widget y enviamos solo los datos necesarios
           DataDetailWidget( title: 'Fecha', data: provider.dueDate.toString().substring(0, 10)),
           DataDetailWidget( title: 'Descripción', data: provider.description),
           DataDetailWidget(title: 'Comentarios', data: provider.comments),
@@ -50,6 +52,7 @@ class TaskDetailsScreen extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
             subtitle: Text(
+              // condicion cuando la tarea se completo
               provider.isCompleted == 1
               ? 'Realizado'
               : 'Por Realizar',

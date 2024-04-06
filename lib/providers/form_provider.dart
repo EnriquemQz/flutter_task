@@ -12,16 +12,19 @@ class FormProvider extends ChangeNotifier {
     notifyListeners();
   }
 
+  // Cargar Fecha al Modelo para enviar datos a la api
   set selectedDate(DateTime date){
     taskData.dueDate = date;
     notifyListeners();
   }
 
+  // eliminamos los datos del modelo al regresar del formulario
   void cleanModel(){
     taskData = TaskDetailModel();
     notifyListeners();
   }
 
+  //Validamos el formulario
   validateForm(){
     return registerFormKey.currentState?.validate() ?? false;
   }

@@ -4,6 +4,7 @@ import 'package:flutter_tasks/providers/providers.dart';
 
 import 'app.dart';
 
+// Separamos el código para una interfaz mas limpia 
 class AppState extends StatelessWidget {
   const AppState({super.key});
 

@@ -17,6 +17,7 @@ class SliverListTasksWidget extends StatelessWidget {
           final item = tasksList[i];
           return GestureDetector(
             onTap: (){
+              // Al precionar in index llamamos a la Api enviando el id y navegamos a TaskDetailScreen
               context.read<ApiProvider>().getDetailsTasks(item.id.toString());
               Navigator.of(context).push(
                 MaterialPageRoute(builder: (_) => const TaskDetailsScreen())

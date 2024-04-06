@@ -8,10 +8,17 @@ class ApiProvider extends ChangeNotifier {
    List<TasksModel> taskList = [];
    TaskDetailModel taskDetailModel = TaskDetailModel();
 
+    // Con este constructor inicializamos el llamado a la api al cargar la app
    ApiProvider(){
     getAllTasks();
    }
 
+  /* 
+  -----------------------------
+    Get Functions
+  -----------------------------
+  */
+  
   getAllTasks() async {
     final response = await ApiTasksServices.api.getAllTasks();
     taskList = [...response];
@@ -24,6 +31,12 @@ class ApiProvider extends ChangeNotifier {
     notifyListeners();
   }
 
+  /* 
+  -----------------------------
+    Post and Edit Functions 
+  -----------------------------
+  */
+
   postNewTask(Map<String, dynamic> json) async {
     
     await ApiTasksServices.api.postNewTask(json);
@@ -35,6 +48,12 @@ class ApiProvider extends ChangeNotifier {
     await ApiTasksServices.api.editTask(json, id);
     getAllTasks();
   }
+
+  /* 
+  -----------------------------
+    Delete Function
+  -----------------------------
+  */
 
   deleteTask(String id) async {
     await ApiTasksServices.api.deleteTask(id);
