@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_tasks/constants/constants.dart';
 import 'package:flutter_tasks/providers/providers.dart';
 import 'package:provider/provider.dart';
 
@@ -18,7 +19,7 @@ class CommentsFormWidget extends StatelessWidget {
           labelText: 'Comentarios (Opcional)',
           floatingLabelBehavior: FloatingLabelBehavior.always,
           labelStyle: TextStyle(
-            color: Colors.black,
+            color: AppColors.textPrimaryColor,
             fontSize: 20.0,
             fontWeight: FontWeight.bold
           )

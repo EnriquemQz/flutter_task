@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_tasks/constants/constants.dart';
 import 'package:flutter_tasks/screens/add_task_screen/add_task_screen.dart';
 
 class FloatingButtonWidget extends StatelessWidget {
@@ -12,8 +13,8 @@ class FloatingButtonWidget extends StatelessWidget {
           MaterialPageRoute(builder: (_) => const AddTaskScreen())
         );
       },
-      backgroundColor: Colors.green,
-      foregroundColor: Colors.white,
+      backgroundColor: AppColors.primaryColor,
+      foregroundColor: AppColors.textWhiteColor,
       child: const Icon(Icons.add),
     );
   }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_tasks/constants/constants.dart';
 import 'package:provider/provider.dart';
 
 import '../../../providers/providers.dart';
@@ -17,7 +18,7 @@ class TagsFormWidget extends StatelessWidget {
           hintText: 'Ejemplo: Hogar',
           floatingLabelBehavior: FloatingLabelBehavior.always,
           labelStyle: TextStyle(
-            color: Colors.black,
+            color: AppColors.textPrimaryColor,
             fontSize: 20.0,
             fontWeight: FontWeight.bold
           )

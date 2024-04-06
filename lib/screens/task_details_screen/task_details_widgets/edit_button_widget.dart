@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_tasks/constants/constants.dart';
 import 'package:flutter_tasks/models/task_detail_model.dart';
 import 'package:flutter_tasks/providers/providers.dart';
 import 'package:provider/provider.dart';
@@ -18,7 +19,7 @@ class EditButtonWidget extends StatelessWidget {
             MaterialPageRoute(builder: (_) => const AddTaskScreen())
           );
         }, 
-        icon: const Icon(Icons.edit, color: Colors.green)
+        icon: const Icon(Icons.edit, color: AppColors.alertColor)
       );
   }
 }

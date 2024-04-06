@@ -3,6 +3,7 @@ import 'package:flutter_tasks/models/models.dart';
 // import 'package:flutter_tasks/models/task_detail_model.dart';
 
 class FormProvider extends ChangeNotifier {
+  GlobalKey<FormState> registerFormKey =  GlobalKey<FormState>();
 
   TaskDetailModel taskData = TaskDetailModel();
 
@@ -19,6 +20,10 @@ class FormProvider extends ChangeNotifier {
   void cleanModel(){
     taskData = TaskDetailModel();
     notifyListeners();
+  }
+
+  validateForm(){
+    return registerFormKey.currentState?.validate() ?? false;
   }
   
 }

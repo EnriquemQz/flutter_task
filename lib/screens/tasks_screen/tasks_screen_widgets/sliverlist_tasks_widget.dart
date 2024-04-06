@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_tasks/constants/constants.dart';
 import 'package:flutter_tasks/screens/task_details_screen/task_details_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_tasks/providers/providers.dart';
@@ -26,7 +27,7 @@ class SliverListTasksWidget extends StatelessWidget {
                 item.title,
                 style: const TextStyle(
                   fontSize: 25.0,
-                  color: Colors.blue
+                  color: AppColors.textTitleColor
                 ),
               ),
               trailing: Icon(

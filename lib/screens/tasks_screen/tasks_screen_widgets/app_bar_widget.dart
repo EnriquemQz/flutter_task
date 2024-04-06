@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_tasks/constants/constants.dart';
 
 class AppBarWidget extends StatelessWidget {
   const AppBarWidget({super.key});
@@ -8,7 +9,7 @@ class AppBarWidget extends StatelessWidget {
     return SliverAppBar(
       elevation: 0.0,
       pinned: true,
-      backgroundColor: Colors.green,
+      backgroundColor: AppColors.primaryColor,
       expandedHeight: 90.0,
       flexibleSpace: FlexibleSpaceBar(
         centerTitle: true,
@@ -17,7 +18,7 @@ class AppBarWidget extends StatelessWidget {
           padding: const EdgeInsets.all(2.5),
           width: 120.0,
           decoration: BoxDecoration(
-            color: Colors.black.withOpacity(0.6),
+            color:AppColors.textPrimaryColor.withOpacity(0.6),
             borderRadius: BorderRadius.circular(8.0)
           ),
           child: const Text(
@@ -25,7 +26,7 @@ class AppBarWidget extends StatelessWidget {
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 14.0,
-              color: Colors.white,
+              color: AppColors.textWhiteColor,
               letterSpacing: 1.5
             ),
           ),

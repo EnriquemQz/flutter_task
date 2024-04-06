@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_tasks/constants/constants.dart';
 import 'package:flutter_tasks/providers/api_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -41,7 +42,7 @@ class DeleteButtonWidget extends StatelessWidget {
           }
         );
       }, 
-      icon: const Icon(Icons.delete_forever, color: Colors.red)
+      icon: const Icon(Icons.delete_forever, color: AppColors.dangerColor)
     );
   }
 }
