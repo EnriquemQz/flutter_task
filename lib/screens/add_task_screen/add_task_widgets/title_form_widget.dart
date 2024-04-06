@@ -13,7 +13,8 @@ class TitleFormWidget extends StatelessWidget {
 
     return TextFormField(
       initialValue: context.read<FormProvider>().taskData.title,
-      // initialValue: mymodel?.title ?? '',
+      maxLength: 25,
+      maxLines: 1,
       decoration: const InputDecoration(
         labelText: 'Titulo *',
         floatingLabelBehavior: FloatingLabelBehavior.always,

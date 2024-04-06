@@ -22,23 +22,36 @@ class SliverListTasksWidget extends StatelessWidget {
                 MaterialPageRoute(builder: (_) => const TaskDetailsScreen())
               );
             },
-            child: ListTile(
-              title: Text(
-                item.title,
-                style: const TextStyle(
-                  fontSize: 25.0,
-                  color: AppColors.textTitleColor
+            child: Padding(
+              padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+              child: Container(
+                padding: const EdgeInsets.all(16.0),
+                decoration: BoxDecoration(
+                  color: AppColors.textWhiteColor,
+                  borderRadius: BorderRadius.circular(18.0)
                 ),
-              ),
-              trailing: Icon(
-                tasksList[i].isCompleted == 0
-                  ? Icons.error
-                  : Icons.done
-              ),
-              subtitle: Text(
-                'Fecha: ${item.dueDate.toString().substring(0, 10)}',
-                style: const TextStyle(
-                  fontWeight: FontWeight.bold
+                child: ListTile(
+                  title: Text(
+                    item.title,
+                    style: const TextStyle(
+                      fontSize: 25.0,
+                      color: AppColors.textTitleColor
+                    ),
+                  ),
+                  trailing: Icon(
+                    tasksList[i].isCompleted == 0
+                      ? Icons.cancel_outlined
+                      : Icons.done_outline_rounded,
+                    color: tasksList[i].isCompleted == 0
+                      ? AppColors.dangerColor
+                      : AppColors.primaryColor
+                  ),
+                  subtitle: Text(
+                    'Fecha: ${item.dueDate.toString().substring(0, 10)}',
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold
+                    ),
+                  ),
                 ),
               ),
             ),

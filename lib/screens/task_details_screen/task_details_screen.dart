@@ -25,25 +25,17 @@ class TaskDetailsScreen extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          SizedBox(
-            width: double.infinity,
-            child: Text(
-              provider.dueDate.toString().substring(0, 10),
-              style: const TextStyle(
-                fontSize: 15.0,
-              ),
-              textAlign: TextAlign.center,
-            ),
-          ),
+          const SizedBox(height: 20.0),
           SizedBox(
             child: Text(
               provider.title,
               style: const TextStyle(
-                fontSize: 25.0,
+                fontSize: 30.0,
                 fontWeight: FontWeight.bold
               ),
             ),
           ),
+          DataDetailWidget( title: 'Fecha', data: provider.dueDate.toString().substring(0, 10)),
           DataDetailWidget( title: 'Descripción', data: provider.description),
           DataDetailWidget(title: 'Comentarios', data: provider.comments),
           DataDetailWidget(title: 'Etiqueta', data: provider.tags),
@@ -55,14 +47,17 @@ class TaskDetailsScreen extends StatelessWidget {
                 fontWeight: FontWeight.bold,
                 fontSize: 18.0
               ),
+              textAlign: TextAlign.center,
             ),
             subtitle: Text(
               provider.isCompleted == 1
               ? 'Realizado'
               : 'Por Realizar',
               style: TextStyle(
+                fontSize: 16.0,
                 color: provider.isCompleted == 1 ? AppColors.primaryColor : AppColors.dangerColor
               ),
+              textAlign: TextAlign.center,
             ),
           ),          
         ],
