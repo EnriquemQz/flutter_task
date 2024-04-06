@@ -16,5 +16,5 @@ Este proyecto es una aplicación en flutter para agregar, editar y borrar tareas
 - **Provider:** Biblioteca de Flutter para el manejo de preferencias de usuario y persistencia de datos simples.
 
 ## Videos Demostrativos
-![Screenshot_1712444006](https://github.com/EnriquemQz/flutter_task/assets/47344835/619b55c2-a408-477a-83cc-3a7a6de57121)
+![Screenshot_1712444006](https://github.com/EnriquemQz/flutter_task/assets/47344835/619b55c2-a408-477a-83cc-3a7a6de57121){:width="300px"}
 
