@@ -1,4 +1,6 @@
 
+
+import 'dart:convert';
 import 'package:flutter_tasks/constants/constants.dart';
 import 'package:flutter_tasks/models/task_detail_model.dart';
 import 'package:flutter_tasks/models/tasks_model.dart';
@@ -80,14 +82,17 @@ class ApiTasksServices {
         )
       );
 
-      
-
-      final response = http.post(
+      final response = await http.post(
         uri,
         headers: Interceptors.authTypeHeaders()
       );
 
-      return response;
+      if(response.statusCode == 200) {
+        Map<String, dynamic> responseData = jsonDecode(response.body);
+        String detail = responseData['detail'];
+        return detail;
+      }
+
       
     } catch (e) {
       throw Exception('Error al Guardar Tarea: $e');
@@ -103,13 +108,17 @@ class ApiTasksServices {
         )
       );
 
-      final response = http.put(
+      final response = await http.put(
         uri,
         headers: Interceptors.authTypeHeaders()
       );
 
-      return response;
-      
+      if(response.statusCode == 200) {
+        Map<String, dynamic> responseData = jsonDecode(response.body);
+        String detail = responseData['detail'];
+        return detail;
+      }
+
     } catch (e) {
       throw Exception('Error al Guardar Tarea: $e');
     }
