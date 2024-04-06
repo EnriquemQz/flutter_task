@@ -1,16 +1,21 @@
-# flutter_tasks
+# **Gestor de Tareas en Flutter**
 
-A new Flutter project.
+Este proyecto es una aplicación en flutter para agregar, editar y borrar tareas. 
 
-## Getting Started
+## Características
 
-This project is a starting point for a Flutter application.
+- **Http:** Para llamados a la api.
+- **Provider:** Para gestinar el estado de la aplicacón.
+- **Gestión de Gastos:** Permite a los usuarios agregar, editar y eliminar tareas de manera intuitiva.
+-
 
-A few resources to get you started if this is your first Flutter project:
+## Tecnologías Utilizadas
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- **Flutter:** Framework de desarrollo multiplataforma para la creación de aplicaciones móviles.
+- **Http:** Motor de base de datos relacional utilizado para almacenar datos de manera local en dispositivos móviles.
+- **Provider:** Biblioteca de Flutter para el manejo de preferencias de usuario y persistencia de datos simples.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Imagenes Demostrativas
+<img src="https://github.com/EnriquemQz/flutter_task/assets/47344835/619b55c2-a408-477a-83cc-3a7a6de57121" width="300">
+<img src="https://github.com/EnriquemQz/flutter_task/assets/47344835/724fe831-6bbc-405f-ba11-a922780a278b" width="300">
+<img src="https://github.com/EnriquemQz/flutter_task/assets/47344835/761c9b43-0238-4409-9bc6-adb9067f883b" width="300">
