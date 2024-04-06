@@ -2,8 +2,8 @@
 
 Este proyecto es una aplicación en flutter para agregar, editar y borrar tareas. 
 
-# ** Cambiar Token
-para cambiar el token del usuario navegar a: lib/services/apiparams.dart  
+# **Cambiar Token**
+Para cambiar el token del usuario navegar a: lib/services/apiparams.dart  
 
 ## Características
 
