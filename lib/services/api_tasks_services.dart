@@ -41,10 +41,10 @@ class ApiTasksServices {
     }
   }
 
-  Future<List<TaskDetailModel>> getTaskDetail() async {
+  Future<TaskDetailModel> getTaskDetail(String id) async {
     try {
 
-      Uri uri = Uri.parse(baseUrl.getTasks).replace(
+      Uri uri = Uri.parse('${baseUrl.getTasks}/$id').replace(
         queryParameters: ApiParams.receiveParams()
       );
 
@@ -54,10 +54,10 @@ class ApiTasksServices {
       );
       
       if (response.statusCode == 200) {
-        final responseData = taskDetailModelFromJson(response.body);
+        final responseData = taskDetailModelFromJson(response.body).first;
         return responseData;
       } else {
-        return [];
+        throw Exception('No se encontraron Tareas');
       }
 
     } catch (e) {
@@ -67,23 +67,20 @@ class ApiTasksServices {
 
   /* 
   ---------------------------
-  Post, Put Functions
+  Post, Put. Functions
   ---------------------------
   */
 
-  postNewTask(String title, String isCompleted, String dueDate, String comments, String description, String tags) async {
+  postNewTask(Map<String, dynamic> json) async {
     try {
 
       Uri uri = Uri.parse(baseUrl.getTasks).replace(
         queryParameters: ApiParams.depositParams(
-          title, 
-          isCompleted, 
-          dueDate, 
-          comments, 
-          description, 
-          tags
+          json
         )
       );
+
+      
 
       final response = http.post(
         uri,
@@ -97,5 +94,50 @@ class ApiTasksServices {
     }
   }
 
+  editTask(Map<String, dynamic> json, String id) async {
+    try {
 
-}
+      Uri uri = Uri.parse('${baseUrl.getTasks}/$id').replace(
+        queryParameters: ApiParams.depositParams(
+          json
+        )
+      );
+
+      final response = http.put(
+        uri,
+        headers: Interceptors.authTypeHeaders()
+      );
+
+      return response;
+      
+    } catch (e) {
+      throw Exception('Error al Guardar Tarea: $e');
+    }
+  }
+
+  /* 
+  ---------------------------
+  Delete Function
+  ---------------------------
+  */
+
+  deleteTask(String id){
+    try {
+
+      Uri uri = Uri.parse('${baseUrl.getTasks}/$id').replace(
+        queryParameters: ApiParams.receiveParams()
+      );
+
+      final response = http.delete(
+        uri,
+        headers: Interceptors.authHeaders()
+      );
+
+      return response;
+      
+    } catch (e) {
+      throw Exception('Error al Eliminar Tarea: $e');
+    }
+  }
+
+  }

@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:flutter_tasks/providers/providers.dart';
 import 'package:flutter_tasks/screens/tasks_screen/tasks_screen_widgets/tasks_screen_widgets.dart';
 
 class TasksScreen extends StatelessWidget {
@@ -8,16 +6,14 @@ class TasksScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-    final apiProvider = context.read<ApiProvider>();
-    apiProvider.getAllTasks();
-
+    
     return const Scaffold(
       backgroundColor: Color.fromARGB(255, 228, 241, 255),
+      floatingActionButton: FloatingButtonWidget(),
       body: CustomScrollView(
         slivers: [
           AppBarWidget(),
-          ListViewTasksWidget()
+          ShowTasks()
         ],
       ),
     );

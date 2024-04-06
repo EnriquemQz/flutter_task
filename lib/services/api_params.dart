@@ -1,5 +1,6 @@
 class ApiParams {
 
+  // static String token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9eyJzdW';
   static String token = 'test';
 
   static Map<String, String> receiveParams(){
@@ -9,21 +10,16 @@ class ApiParams {
   }
 
   static Map<String, String> depositParams(
-    String title,
-    String isCompleted,
-    String dueDate,
-    String comments,
-    String description,
-    String tags
+    json
   ){
     return {
       'token': token,
-      'tile': title,
-      'is_completed' : isCompleted,
-      'due_date' : dueDate,
-      'comments': comments,
-      'description': description,
-      'tags' : tags
+      'title': json['title'],
+      'is_completed' : json['is_completed'].toString(),
+      'due_date' : json['due_date'].toString().substring(0, 10),
+      'comments': json['comments'],
+      'description': json['description'],
+      'tags' : json['tags']
     };
   }
 

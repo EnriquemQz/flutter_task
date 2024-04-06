@@ -1,3 +1,7 @@
+// To parse this JSON data, do
+//
+//     final taskDetailModel = taskDetailModelFromJson(jsonString);
+
 import 'dart:convert';
 
 List<TaskDetailModel> taskDetailModelFromJson(String str) => List<TaskDetailModel>.from(json.decode(str).map((x) => TaskDetailModel.fromJson(x)));
@@ -5,42 +9,43 @@ List<TaskDetailModel> taskDetailModelFromJson(String str) => List<TaskDetailMode
 String taskDetailModelToJson(List<TaskDetailModel> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
 class TaskDetailModel {
-    int id;
+    int? id;
     String title;
     int isCompleted;
     DateTime dueDate;
     String comments;
     String description;
-    String tags;
-    String token;
-    DateTime createdAt;
-    DateTime updatedAt;
+    String? tags;
+    String? token;
+    DateTime? createdAt;
+    DateTime? updatedAt;
 
     TaskDetailModel({
-        required this.id,
-        required this.title,
-        required this.isCompleted,
-        required this.dueDate,
-        required this.comments,
-        required this.description,
-        required this.tags,
-        required this.token,
-        required this.createdAt,
-        required this.updatedAt,
-    });
+        this.id,
+        this.title = '',
+        this.isCompleted = 0,
+        // this.dueDate,
+        this.comments = '',
+        this.description = '',
+        this.tags,
+        this.token,
+        this.createdAt,
+        this.updatedAt,
+    }) : dueDate = DateTime.now();
+
+    //dueDate: json["due_date"] != null ? DateTime.parse(json["due_date"]) : null,
 
     factory TaskDetailModel.fromJson(Map<String, dynamic> json) => TaskDetailModel(
         id: json["id"],
         title: json["title"],
         isCompleted: json["is_completed"],
-        dueDate: DateTime.parse(json["due_date"]),
         comments: json["comments"],
         description: json["description"],
         tags: json["tags"],
         token: json["token"],
-        createdAt: DateTime.parse(json["created_at"]),
-        updatedAt: DateTime.parse(json["updated_at"]),
-    );
+        createdAt: json["created_at"] == null ? null : DateTime.parse(json["created_at"]),
+        updatedAt: json["updated_at"] == null ? null : DateTime.parse(json["updated_at"]),
+    )..dueDate = json["due_date"] != null ? DateTime.parse(json["due_date"]) : DateTime.now();
 
     Map<String, dynamic> toJson() => {
         "id": id,
@@ -51,7 +56,7 @@ class TaskDetailModel {
         "description": description,
         "tags": tags,
         "token": token,
-        "created_at": createdAt.toIso8601String(),
-        "updated_at": updatedAt.toIso8601String(),
+        "created_at": createdAt?.toIso8601String(),
+        "updated_at": updatedAt?.toIso8601String(),
     };
 }
