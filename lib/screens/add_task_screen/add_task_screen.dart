@@ -23,7 +23,7 @@ class AddTaskScreen extends StatelessWidget {
           title: Text( hasData ? 'Editar Tarea' : 'Agregar Tarea'),
         ),
         body: Padding(
-          padding: EdgeInsets.all(18.0),
+          padding: const EdgeInsets.all(18.0),
           child: Form(
             child: SingleChildScrollView(
               child: Column(

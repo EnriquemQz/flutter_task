@@ -15,7 +15,7 @@ class TaskDetailModel {
     DateTime dueDate;
     String comments;
     String description;
-    String? tags;
+    String tags;
     String? token;
     DateTime? createdAt;
     DateTime? updatedAt;
@@ -25,9 +25,9 @@ class TaskDetailModel {
         this.title = '',
         this.isCompleted = 0,
         // this.dueDate,
-        this.comments = '',
-        this.description = '',
-        this.tags,
+        this.comments = 'sin comentarios',
+        this.description = 'sin descripción',
+        this.tags = 'sin etiqueta',
         this.token,
         this.createdAt,
         this.updatedAt,

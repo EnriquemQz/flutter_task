@@ -35,7 +35,6 @@ class DateFormWidget extends StatelessWidget {
             lastDate: DateTime(2100)
           ).then((value) {
             context.read<FormProvider>().selectedDate = value!;
-            print(selectedDate.dueDate);
           });
         },
       ),

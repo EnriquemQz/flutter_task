@@ -29,8 +29,16 @@ class SliverListTasksWidget extends StatelessWidget {
                   color: Colors.blue
                 ),
               ),
+              trailing: Icon(
+                tasksList[i].isCompleted == 0
+                  ? Icons.error
+                  : Icons.done
+              ),
               subtitle: Text(
-                item.dueDate.toString()
+                'Fecha: ${item.dueDate.toString().substring(0, 10)}',
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold
+                ),
               ),
             ),
           );
